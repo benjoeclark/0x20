@@ -10,8 +10,8 @@ lib: lib0x20.cpp
 test: testRunner
 	./testRunner
 
-testRunner: testRunner.cpp
-	$(CC) -o testRunner -I $(CXXTESTDIR) testRunner.cpp
+testRunner: testRunner.cpp game.cpp
+	$(CC) -o testRunner -I $(CXXTESTDIR) game.cpp testRunner.cpp
 
 testRunner.cpp: testSuite.h
 	$(CXXTESTGEN) --error-printer -o testRunner.cpp testSuite.h
